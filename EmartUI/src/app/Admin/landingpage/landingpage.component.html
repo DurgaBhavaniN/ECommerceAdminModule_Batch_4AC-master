@@ -1,0 +1,50 @@
+
+<div class="container-fluid">
+        <div class="image">
+          
+          <div class="row">
+              <nav class="navbar navbar-expand-lg ">
+                
+             <div class="collapse navbar-collapse" id="navbarText">
+               <ul class="navbar-nav mr-auto">
+                
+                 <li class="nav-item ">
+                   <a class="nav-link" [routerLink]="'add-category-page'"> Add Category</a>
+                 </li>
+                 <li class="nav-item">
+                  <a class="nav-link" [routerLink]="'add-sub-category-page'">  Add SubCategory </a>
+                </li>  
+                <!-- <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" [routerLink]="['/landingpage']" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Block/UnBlock
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="d1">
+                    <a class="dropdown-item" [routerLink]="'seller-block-unblock-page'">Seller</a>
+                    <a class="dropdown-item" [routerLink]="'buyer-block-unblock-page'">Buyer</a>
+                  </div>
+               </li> -->
+               <li class="nav-item">
+                <a class="nav-link" [routerLink]="'seller-block-unblock-page'">  Block/UnBlock Seller </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="'buyer-block-unblock-page'">  Block/UnBlock buyer </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="'view-category-page'">  View Category </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="'view-subcategory-page'">  View SubCategory </a>
+              </li>
+
+                </ul>
+              </div>
+                 <ul class="navbar-nav ml-auto">
+                   <li class="nav-item">
+                     <a class="nav-link" [routerLink]="['/login-page']"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                   </li>
+                </ul>
+                </nav>
+              </div>
+              <router-outlet></router-outlet>
+        </div>
+      </div>

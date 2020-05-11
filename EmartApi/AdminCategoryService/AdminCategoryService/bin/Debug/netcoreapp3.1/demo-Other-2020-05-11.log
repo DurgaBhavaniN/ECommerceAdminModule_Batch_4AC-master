@@ -1,0 +1,186 @@
+2020-05-11 10:44:20.4360||DEBUG|AdminCategoryService.Program|init main function |url: |action: 
+2020-05-11 11:13:18.4474||DEBUG|AdminCategoryService.Program|init main function |url: |action: 
+2020-05-11 11:18:26.9482||DEBUG|AdminCategoryService.Program|init main function |url: |action: 
+2020-05-11 11:20:03.6951|20004|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'EmartDB' on server 'LAPTOP-U61JE6J6\SQLEXPRESS'. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 11:20:03.9374|10100|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'AdminCategoryService.Entities.EmartDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20 Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20|url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 11:25:32.8270||DEBUG|AdminCategoryService.Program|init main function |url: |action: 
+2020-05-11 11:26:37.8057|20004|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'EmartDB' on server 'LAPTOP-U61JE6J6\SQLEXPRESS'. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 11:26:38.0657|10100|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'AdminCategoryService.Entities.EmartDBContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20 Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SQL Network Interfaces, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.InitializeReader(DbContext _, Boolean result)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20|url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 11:28:34.5358||DEBUG|AdminCategoryService.Program|init main function |url: |action: 
+2020-05-11 11:28:56.3066||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 11:36:14.2976||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 11:36:14.2976||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 11:36:33.7643||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 sellers |url: http://localhost/AdminService/GetAllSellers|action: GetSellers
+2020-05-11 12:20:48.4051||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:21:48.7043||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:21:54.6283||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:22:06.5692||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:22:21.8926||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:22:27.0071||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:31:19.1996||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:32:04.3653||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:32:49.6270||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:39:48.9711||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:39:50.5237||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:44:45.3710||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:47:35.5304||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:48:05.6440||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:48:35.3964||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:49:00.5159||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:49:30.6923||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:49:37.4802||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:49:43.2760||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:49:47.9268||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:49:54.5748||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 12:59:22.0554||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:14:16.5845||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:14:42.9729||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:15:21.3953||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:15:37.0302||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:16:09.9202||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:16:29.5451||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:16:39.1665||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:16:51.0900||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:16:55.9395||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:17:22.4944||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:17:32.7537||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:17:42.6990||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:18:00.2560||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:18:14.9718||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:18:33.4449||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:19:02.2238||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:19:30.2281||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:19:39.0824||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:29:06.6291||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 sellers |url: http://localhost/AdminService/GetAllSellers|action: GetSellers
+2020-05-11 13:29:10.4462||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 13:29:39.0397||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 13:29:51.3240||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 13:29:57.5920||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:31:55.1997||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:32:00.3123||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:32:29.3639||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:32:32.9208||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 13:41:27.0712||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 14:08:44.0910||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 14:11:07.9296||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 sellers |url: http://localhost/AdminService/GetAllSellers|action: GetSellers
+2020-05-11 14:11:09.6067||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 14:11:10.8932||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 sellers |url: http://localhost/AdminService/GetAllSellers|action: GetSellers
+2020-05-11 14:11:12.3240||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 14:11:13.7053||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 sellers |url: http://localhost/AdminService/GetAllSellers|action: GetSellers
+2020-05-11 14:11:27.3277||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:03:47.9551||DEBUG|AdminCategoryService.Program|init main function |url: |action: 
+2020-05-11 16:04:20.5606||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 16:04:20.6824||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 16:04:23.6499||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 sellers |url: http://localhost/AdminService/GetAllSellers|action: GetSellers
+2020-05-11 16:05:12.0637||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 sellers |url: http://localhost/AdminService/GetAllSellers|action: GetSellers
+2020-05-11 16:05:22.7141||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 sellers |url: http://localhost/AdminService/GetAllSellers|action: GetSellers
+2020-05-11 16:05:42.8302||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 16:05:46.6118||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:05:53.3914||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:06:08.5363||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 16:06:27.9170||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 16:06:33.7835||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 16:06:50.0168||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 16:07:12.5125||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 16:07:12.7219||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 16:07:34.2165||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 16:07:36.1494||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 sellers |url: http://localhost/AdminService/GetAllSellers|action: GetSellers
+2020-05-11 16:07:37.6894||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:07:42.1623||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:07:43.7051||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 sellers |url: http://localhost/AdminService/GetAllSellers|action: GetSellers
+2020-05-11 16:07:45.1775||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 16:07:46.9909||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:09:21.3328||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 16:09:22.3217||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:09:25.3321||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 1 users |url: http://localhost/AdminService/GetAllUsers|action: GetUsers
+2020-05-11 16:09:28.3644||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:09:50.8478||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:12:26.6369||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:12:32.1126||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:12:54.4312||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:13:02.3692||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:13:14.2496||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:13:27.5322||INFO|AdminCategoryService.Controllers.AdminServiceController|Returning 2 categories. |url: http://localhost/AdminService/GetAllCategory|action: Get
+2020-05-11 16:26:18.8282||DEBUG|AdminCategoryService.Program|init main function |url: |action: 
