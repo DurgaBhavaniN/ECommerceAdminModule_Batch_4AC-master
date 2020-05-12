@@ -1,4 +1,5 @@
 ﻿using AdminCategoryService.Entities;
+using AdminCategoryService.Models;
 using AdminCategoryService.Repository;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using Moq;
@@ -27,18 +28,18 @@ namespace TestAdminServices
         //Adding Category
         [Test]
         [Description("AddCategory")]
-        public void AddCategory()
+        public async Task AddCategory()
         {
             try
             {
-                var cId = 556;
-                var cName = "books";
+                var cId = 557;
+                var cName = "book";
                 var CDetail = "all books";
-                var cat = new Category { Cid = cId, Cname = cName, Cdetails = CDetail };
+                var cat = new CategoryModel { Cid = cId, Cname = cName, Cdetails = CDetail };
                 var mock = new Mock<IAdminRepository>();
-                mock.Setup(x => x.AddCategory(cat));
-                var result = mock.Setup(x => x.getCategoryid(cat.Cid));
-                Assert.IsNotNull(result,"TestPassed");
+                mock.Setup(x => x.AddCategory(cat)).ReturnsAsync(true);
+                var result = await _repo.AddCategory(cat);
+                Assert.AreEqual(true,result);
             }
             catch (Exception ex)
             {
@@ -49,20 +50,20 @@ namespace TestAdminServices
         //Adding SubCategory
         [Test]
         [Description("Add SubCategory")]
-        public void AddSubCategory()
+        public async Task AddSubCategory()
         {
             try
             {
                 var subId = 121;
                 var sName = "hdfa";
                 var sDetail = "jbcahv";
-                var cId = 556;
+                var cId = 557;
                 var gst = 7;
-                var subcat = new SubCategory { Subid = subId, Subname = sName, Sdetails = sDetail, Cid = cId, Gst = gst };
+                var subcat = new SubCategoryModel { Subid = subId, Subname = sName, Sdetails = sDetail, Cid = cId, Gst = gst };
                 var mock = new Mock<IAdminRepository>();
-                mock.Setup(x => x.AddSubcategory(subcat));
-                var result = mock.Setup(x => x.getsubcategorybyid(subcat.Subid));
-                Assert.IsNotNull(result,"TestPassed");
+                mock.Setup(x => x.AddSubcategory(subcat)).ReturnsAsync(true);
+                var result = await _repo.AddSubcategory(subcat);
+                Assert.AreEqual(true,result);
             }
             catch(Exception ex)
             {
@@ -277,11 +278,11 @@ namespace TestAdminServices
         //Mock Testing of Updatesubcategory
         [Test]
         [Description("UpdateSubcategory")]
-        public async Task UpdateSubCategory_mockTest()
+        public async Task UpdateSubCategory()
         {
             try
             {
-                SubCategory sub = new SubCategory() {   Subid=1,Subname = "pen", Cid = 1, Gst = 4, Sdetails = "def" };
+                SubCategoryModel sub = new SubCategoryModel() {   Subid=1,Subname = "pen", Cid = 1, Gst = 4, Sdetails = "def" };
                 var mock = new Mock<IAdminRepository>();
                 mock.Setup(x => x.updatesubcategory(sub)).ReturnsAsync(true);
                 var result = await _repo.updatesubcategory(sub);
@@ -297,11 +298,11 @@ namespace TestAdminServices
         //Mock Testing of Updatecategory
         [Test]
         [Description("UpdateCategory")]
-        public async Task UpdateCategory_mockTest()
+        public async Task UpdateCategory()
         {
             try
             {
-               Category cat = new Category() {   Cid= 1, Cname= "fashion",  Cdetails = "menfashion" };
+               CategoryModel cat = new CategoryModel() {   Cid= 1, Cname= "fashion",  Cdetails = "menfashion" };
                 var mock = new Mock<IAdminRepository>();
                 mock.Setup(x => x.updatecategory(cat)).ReturnsAsync(true);
                 var result = await _repo.updatecategory(cat);

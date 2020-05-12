@@ -43,13 +43,13 @@ namespace AdminCategoryService.Manager
 
         }
 
-        public string DeletCategory(int cid)
+        public string DeleteCategory(int cid)
         {
             _repo.DeleteCategory(cid);
             return "Category deleted";
         }
 
-        public string DeletSubCategory(int subid)
+        public string DeleteSubCategory(int subid)
         {
             _repo.DeleteSubCategory(subid);
             return "subcategory deleted";

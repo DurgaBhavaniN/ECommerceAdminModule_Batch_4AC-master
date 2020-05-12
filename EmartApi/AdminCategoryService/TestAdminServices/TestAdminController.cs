@@ -1,6 +1,7 @@
 ﻿using AdminCategoryService.Controllers;
 using AdminCategoryService.Entities;
 using AdminCategoryService.Manager;
+using AdminCategoryService.Models;
 using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
@@ -32,7 +33,7 @@ namespace TestAdminServices
         {
             try
             {
-                Category cat = new Category() { Cid = cid, Cname = cname, Cdetails = cdetails };
+                CategoryModel cat = new CategoryModel() { Cid = cid, Cname = cname, Cdetails = cdetails };
                 var mock = new Mock<IManager>();
                 mock.Setup(x => x.AddCategory(cat)).ReturnsAsync(true);
                 var res = await controller.Addcategory(cat);
@@ -54,7 +55,7 @@ namespace TestAdminServices
         {
             try
             {
-                SubCategory subcat = new SubCategory() {Subid=subid,Subname=subname,Cid = cid,Sdetails=sdetails,Gst=gst};
+                SubCategoryModel subcat = new SubCategoryModel() {Subid=subid,Subname=subname,Cid = cid,Sdetails=sdetails,Gst=gst};
                 var res = await controller.Addsubcategory(subcat);
                 Assert.AreEqual(null,res);
 
