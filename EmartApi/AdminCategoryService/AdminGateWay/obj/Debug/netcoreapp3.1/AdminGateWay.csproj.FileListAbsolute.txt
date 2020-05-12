@@ -121,3 +121,4 @@ E:\ECommerceAdminModule_Batch_4AC-master (1)\ECommerceAdminModule_Batch_4AC-mast
 E:\ECommerceAdminModule_Batch_4AC-master (1)\ECommerceAdminModule_Batch_4AC-master\EmartApi\AdminCategoryService\AdminGateWay\obj\Debug\netcoreapp3.1\AdminGateWay.dll
 E:\ECommerceAdminModule_Batch_4AC-master (1)\ECommerceAdminModule_Batch_4AC-master\EmartApi\AdminCategoryService\AdminGateWay\obj\Debug\netcoreapp3.1\AdminGateWay.pdb
 E:\ECommerceAdminModule_Batch_4AC-master (1)\ECommerceAdminModule_Batch_4AC-master\EmartApi\AdminCategoryService\AdminGateWay\obj\Debug\netcoreapp3.1\AdminGateWay.genruntimeconfig.cache
+E:\ECommerceAdminModule_Batch_4AC-master (1)\ECommerceAdminModule_Batch_4AC-master\EmartApi\AdminCategoryService\AdminGateWay\obj\Debug\netcoreapp3.1\AdminGateWay.csprojAssemblyReference.cache

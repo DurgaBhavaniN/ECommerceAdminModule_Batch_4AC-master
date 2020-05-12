@@ -159,7 +159,7 @@ namespace TestAdminServices
         {
             try
             {
-                _manager.DeletCategory(cid);
+                _manager.DeleteCategory(cid);
                 var result = _manager.getCategoryid(cid);
                 Assert.IsNull(result);
             }
@@ -177,7 +177,7 @@ namespace TestAdminServices
         {
             try
             {
-                _manager.DeletSubCategory(subid);
+                _manager.DeleteSubCategory(subid);
                 var result = _manager.getsubcategorybyid(subid);
                 Assert.IsNull(result);
             }

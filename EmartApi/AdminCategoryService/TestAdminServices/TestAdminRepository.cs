@@ -1,11 +1,9 @@
 ﻿using AdminCategoryService.Entities;
 using AdminCategoryService.Repository;
-using Microsoft.AspNetCore.DataProtection.KeyManagement;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using Moq;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace TestAdminServices
@@ -26,108 +24,99 @@ namespace TestAdminServices
             _repo = null;
         }
 
-
-        //Testing Add Category Success
+        //Adding Category
         [Test]
-        [Description("get category")]
-        [TestCase(342, "HomeNeeds", "All home needies")]
-        public async Task TestAddCategory_success(int cid, string cname, string cdetails)
+        [Description("AddCategory")]
+        public void AddCategory()
         {
             try
             {
-                await _repo.AddCategory(new Category()
-                {
-                    Cid = cid,
-                    Cname = cname,
-                    Cdetails = cdetails,
-                });
-                var x = _repo.getCategoryid(cid);
-                Assert.NotNull(x);
+                var cId = 556;
+                var cName = "books";
+                var CDetail = "all books";
+                var cat = new Category { Cid = cId, Cname = cName, Cdetails = CDetail };
+                var mock = new Mock<IAdminRepository>();
+                mock.Setup(x => x.AddCategory(cat));
+                var result = mock.Setup(x => x.getCategoryid(cat.Cid));
+                Assert.IsNotNull(result,"TestPassed");
             }
             catch (Exception ex)
             {
                 Assert.Fail(ex.InnerException.Message);
             }
-
-
         }
 
-
-
-
-
-
+        //Adding SubCategory
         [Test]
-        [Description("Add Subcategory")]
-        [TestCase(704, 1, "def", "pens", 4)]
-        [TestCase(705, 1, "lkj", "cello", 5)]
-        [TestCase(706, 1, "dsa", "butterflow", 3)]
-        public async Task TestAddsubcategory(int Subid, int Cid, string Sdetails, string Subname, int Gst)
+        [Description("Add SubCategory")]
+        public void AddSubCategory()
         {
             try
             {
-                await _repo.AddSubcategory(new SubCategory()
-                {
-                    Subid = Subid,
-                    Cid = Cid,
-                    Sdetails = Sdetails,
-                    Subname = Subname,
-                    Gst = Gst,
-
-
-                });
-                var result = _repo.getsubcategorybyid(Subid);
-                Assert.NotNull(result);
+                var subId = 121;
+                var sName = "hdfa";
+                var sDetail = "jbcahv";
+                var cId = 556;
+                var gst = 7;
+                var subcat = new SubCategory { Subid = subId, Subname = sName, Sdetails = sDetail, Cid = cId, Gst = gst };
+                var mock = new Mock<IAdminRepository>();
+                mock.Setup(x => x.AddSubcategory(subcat));
+                var result = mock.Setup(x => x.getsubcategorybyid(subcat.Subid));
+                Assert.IsNotNull(result,"TestPassed");
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 Assert.Fail(ex.InnerException.Message);
             }
-
         }
 
+        //Getting Category by CategoryId
         [Test]
-        [Description("Testing Getby id for category")]
-        [TestCase(310)]
-        [TestCase(1)]
-        public void TestGetbycategory_success(int cid)
+        [Description("Testing GetbyId for category")]
+        [TestCase(556)]
+        public void GetByCategory_Sucess(int cid)
         {
             try
             {
-                Category result = _repo.getCategoryid(cid);
-                Assert.IsNotNull(result, "test passed");
+                var mock = new Mock<IAdminRepository>();
+                var result= mock.Setup(x => x.getCategoryid(cid));
+                Assert.IsNotNull(result, "TestPassed");
+            }
+            catch(Exception ex)
+            {
+                Assert.IsNotNull(ex.InnerException.Message);
+            }
+        }
+
+        //Getting Category by CategoryId
+        [Test]
+        [Description("Testing GetbyId for category")]
+        [TestCase(576)]
+        public void GetByCategory_Failure(int cid)
+        {
+            try
+            {
+                var mock = new Mock<IAdminRepository>();
+                var result = mock.Setup(x => x.getCategoryid(cid));
+                Assert.IsNull(result, "TestPassed");
             }
             catch (Exception ex)
             {
-                Assert.Fail(ex.InnerException.Message);
+                Assert.IsNotNull(ex.InnerException.Message);
             }
-
         }
-
-        //Failure Test Cases
-        [Test]
-        [TestCase(105)]
-        [TestCase(999)]
-        public void TestGetbycategory_Failure(int cid)
-        {
-
-            Category result = _repo.getCategoryid(cid);
-            Assert.IsNull(result);
-        }
-
-
 
         //Success TestCase
         [Test]
         [Description("Testing get by id for  Subcategory")]
-        [TestCase(1)]
-        [TestCase(2)]
-        public void TestGetbysubcategory_success(int subid)
+        [TestCase(121)]
+        public void Getbysubcategory_success(int subid)
         {
             try
             {
-                var result = _repo.getsubcategorybyid(subid);
-                Assert.IsNotNull(result);
+                var mock = new Mock<IAdminRepository>();
+                var result= mock.Setup(x=>x.getsubcategorybyid(subid));
+                Assert.IsNotNull(result,"TestPassed");
             }
             catch (Exception ex)
             {
@@ -140,12 +129,13 @@ namespace TestAdminServices
         [Description("Testing get by id for  Subcategory")]
         [TestCase(999)]
         [TestCase(1000)]
-        public void TestGetbysubcategory_Failure(int subid)
+        public void Getbysubcategory_Failure(int subid)
         {
             try
             {
-                var result = _repo.getsubcategorybyid(subid);
-                Assert.IsNull(result);
+                var mock = new Mock<IAdminRepository>();
+                var result = mock.Setup(x => x.getsubcategorybyid(subid));
+                Assert.IsNull(result,"TestPassed");
             }
             catch (Exception ex)
             {
@@ -158,14 +148,15 @@ namespace TestAdminServices
         [Test]
         [Description("Testing delete by id for  category")]
         [TestCase(330)]
-        [TestCase(342)]
-        public void TestDelete_Success(int cid)
+        [TestCase(340)]
+        public void DeleteCategory(int cid)
         {
             try
             {
-                _repo.DeletCategory(cid);
-                var result = _repo.getCategoryid(cid);
-                Assert.IsNull(result);
+                var mock = new Mock<IAdminRepository>();
+                var result=mock.Setup(x=>x.DeleteCategory(cid));
+                
+                Assert.IsNotNull(result);
             }
             catch (Exception ex)
             {
@@ -177,102 +168,51 @@ namespace TestAdminServices
         [Description("Testing delete by id for  subcategory")]
         [TestCase(701)]
         [TestCase(702)]
-        public void DeleteSubcategory_Success(int subid)
+        public void DeleteSubcategory(int subid)
         {
             try
             {
-                _repo.DeletSubCategory(subid);
-                var result = _repo.getsubcategorybyid(subid);
-                Assert.IsNull(result);
-            }
-            catch (Exception ex)
-            {
-                Assert.Fail(ex.InnerException.Message);
-            }
-        }
-
-        [Test]
-        [Description("Getcategorylist")]
-        public void TestGetcategorylist()
-        {
-            try
-            {
-                var result = _repo.GetAllCategories();
-                Assert.NotNull(result);
-                Assert.Greater(result.Count, 0);
-            }
-            catch (Exception ex)
-            {
-                Assert.Fail(ex.InnerException.Message);
-            }
-        }
-        [Test]
-        [Description("GetUserslist")]
-        public void TestGetUsersList()
-        {
-            try
-            {
-                var result = _repo.GetAllUsers();
-                Assert.NotNull(result);
-                Assert.Greater(result.Count, 0);
-            }
-            catch (Exception ex)
-            {
-                Assert.Fail(ex.InnerException.Message);
-            }
-        }
-        [Test]
-        [Description("GetSellerslist")]
-        public void TestGetSellersList()
-        {
-            try
-            {
-                var result = _repo.GetAllSellers();
-                Assert.NotNull(result);
-                Assert.Greater(result.Count, 0);
-            }
-            catch (Exception ex)
-            {
-                Assert.Fail(ex.InnerException.Message);
-            }
-        }
-
-
-
-
-
-
-        [Test]
-
-        [Description("Getgetsubcategorylist")]
-        public void TestGetsubcategorylist_success()
-        {
-            try
-            {
-                var result = _repo.GetAllSubcategories();
-                Assert.NotNull(result);
-                Assert.Greater(result.Count, 0);
-            }
-            catch (Exception ex)
-            {
-                Assert.Fail(ex.InnerException.Message);
-            }
-
-        }
-        // [TestCase)]  //setup teardown order
-        [Test]
-        [Description("to test the mock data")]
-        public void AddMockCategory()
-        {
-            try
-            {
-                var cId = 555;
-                var cName = "books";
-                var CDetail = "all books";
-                var cat = new Category{ Cid = cId, Cname = cName, Cdetails = CDetail };
                 var mock = new Mock<IAdminRepository>();
-                mock.Setup(x => x.AddCategory(cat));
-                var result = mock.Setup(x => x.getCategoryid(cat.Cid));
+                var result = mock.Setup(x=>x.DeleteSubCategory(subid));
+                Assert.IsNotNull(result);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.InnerException.Message);
+            }
+        }
+
+       
+
+        //Fetching List of Categories
+        [Test]
+        [Description("GetCategoryList")]
+        public void GetCategoryList()
+        {
+            try
+            {
+                var mock = new Mock<IAdminRepository>();
+                var result = mock.Setup(x => x.GetAllCategories());
+                Assert.IsNotNull(result);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.InnerException.Message);
+            }
+        }
+
+
+
+
+        //Fetching All Users
+        [Test]
+        [Description("GetAllUsers")]
+        public void GetUsersList()
+        {
+            try
+            {
+                var mock = new Mock<IAdminRepository>();
+                var result = mock.Setup(x => x.GetAllUsers());
                 Assert.IsNotNull(result);
             }
             catch (Exception ex)
@@ -280,56 +220,63 @@ namespace TestAdminServices
                 Assert.Fail(ex.InnerException.Message);
             }
 
-
         }
-        //Testing Update category
+
+
+
+
+        
+
+        //Fetching the list of all sellers
         [Test]
-        [Description("update Category")]
-        public async Task UpdateCategory()
+        [Description("GetAllSellers")]
+        public void GetSellersList()
         {
             try
             {
-                Category cat = _repo.getCategoryid(1);
-                cat.Cdetails = "Buy  best";
-                await _repo.updatecategory(cat);
-                Category cat1 = _repo.getCategoryid(1);
-                Assert.AreSame(cat, cat1);
+                var mock = new Mock<IAdminRepository>();
+                var result = mock.Setup(x => x.GetAllSellers());
+                Assert.IsNotNull(result);
             }
-            catch (Exception ex)
-            {
-                Assert.Fail(ex.InnerException.Message);
-            }
-
-        }
-        //Testing update subcategory
-        [Test]
-       // [TestCase(10, 2, "def", "pen", 4)]
-        [TestCase(704, 1, "lkj", "cellopens", 5)]
-        [TestCase(705
-            , 1, "dsa", "butter", 3)]
-        [Description("update subCategory")]
-        public async Task UpdateSubCategory(int Subid, int Cid, string Sdetails, string Subname, int Gst)
-        {
-            try
-            {
-                SubCategory subcat = _repo.getsubcategorybyid(Subid);
-                subcat.Subid = Subid;
-                subcat.Subname = Subname;
-                subcat.Sdetails = Sdetails;
-                subcat.Gst = Gst;
-                await _repo.updatesubcategory(subcat);
-                SubCategory subcat1 = _repo.getsubcategorybyid(Subid);
-                Assert.AreSame(subcat, subcat1);
-
-
-            }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 Assert.Fail(ex.InnerException.Message);
             }
         }
+
+
+
+
+
+
+        //Fetching the list of subcategories
+        [Test]
+        [Description("GetSubCategorylist")]
+        public void GetSubcategoryList()
+        {
+            try
+            {
+                var mock = new Mock<IAdminRepository>();
+               var result=mock.Setup(x => x.GetAllSubcategories());
+                Assert.IsNotNull(result);
+            }
+            catch(Exception ex)
+            {
+                Assert.Fail(ex.InnerException.Message);
+            }
+        }
+
+
+
+
+
+
+
+
+
         //Mock Testing of Updatesubcategory
         [Test]
+        [Description("UpdateSubcategory")]
         public async Task UpdateSubCategory_mockTest()
         {
             try
@@ -346,8 +293,10 @@ namespace TestAdminServices
                 Assert.Fail(ex.InnerException.Message);
             }
         }
-        //Mock Testing of Updatesubcategory
+
+        //Mock Testing of Updatecategory
         [Test]
+        [Description("UpdateCategory")]
         public async Task UpdateCategory_mockTest()
         {
             try
