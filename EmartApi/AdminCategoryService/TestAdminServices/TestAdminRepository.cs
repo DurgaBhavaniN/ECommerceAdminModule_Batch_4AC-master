@@ -310,6 +310,7 @@ namespace TestAdminServices
                 var cdetails = "mensfashion";
                 CategoryModel cat1 = new CategoryModel() { Cid = cid, Cname = cname, Cdetails = cdetails };
                 await _repo.AddCategory(cat1);
+                var x = _repo.getCategoryid(cat1.Cid);
                CategoryModel cat = new CategoryModel() {   Cid= 569, Cname= "fashion",  Cdetails = "menfashion" };
                 var mock = new Mock<IAdminRepository>();
                 mock.Setup(x => x.updatecategory(cat)).ReturnsAsync(true);
