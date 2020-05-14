@@ -101,7 +101,7 @@ namespace AdminCategoryService.Repository
             List<SubCategory> cat = _context.SubCategory.ToList();
             foreach (var k in cat)
             {
-                c.Add(new SubCategoryModel() { Subid = k.Subid, Cid = k.Cid, Subname = k.Sdetails, Gst = k.Gst });
+                c.Add(new SubCategoryModel() { Subid = k.Subid, Cid = k.Cid, Subname = k.Subname,Sdetails=k.Sdetails, Gst = k.Gst });
             }
 
             return c;

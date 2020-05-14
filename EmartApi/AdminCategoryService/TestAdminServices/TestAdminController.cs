@@ -6,9 +6,7 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
+
 using System.Threading.Tasks;
 
 namespace TestAdminServices
@@ -29,7 +27,7 @@ namespace TestAdminServices
         }
         [Test]
         [TestCase(589, "HomeNeeds", "All home needies")]
-        public async Task TestAddcategory(int cid, string cname, string cdetails)
+        public async Task Addcategory(int cid, string cname, string cdetails)
         {
             try
             {
@@ -51,7 +49,7 @@ namespace TestAdminServices
         }
         [Test]
         [TestCase(612, "HomeNeeds",1, "All",4)]
-        public async Task TestAddSubcategory(int subid, string subname,int cid, string sdetails,int gst)
+        public async Task AddSubcategory(int subid, string subname,int cid, string sdetails,int gst)
         {
             try
             {

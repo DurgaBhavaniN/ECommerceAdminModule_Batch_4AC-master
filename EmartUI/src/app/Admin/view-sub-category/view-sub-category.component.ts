@@ -25,11 +25,10 @@ subcategory:SubCategory[];
   {
     this.service.DeleteSubCategory(subcid).subscribe(res=>{
       console.log('record deleted');
- 
   },err=>{
      console.log(err);
   });
-  alert("category deleted...")
+  alert("Subcategory deleted...")
   
 
   }

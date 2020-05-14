@@ -2,16 +2,20 @@
     <div class="container">
         <table class="table table-bordered">
             <tr id="e">
-                <th>SubCategoryName</th>
-                <th>CategoryId</th>
-                    <th>SubcategoryDetails</th>
-                    <th>Delete</th>
+                
+                <th>SubCategoryDetails</th>
+               
+                <th>SubcategoryName</th>
+                <th>Gst</th>
+                <th>Delete</th>
             </tr>
             <tr id="r" *ngFor="let item of subcategory">
-               <td>{{item.subname}}</td>
-               <td>{{item.cid}}</td>
+            
+              <td>{{item.subname}}</td>
+              
                <td>{{item.sdetails}}</td>
-               <td><button type="button"  class="btn btn-danger" (click)="deletecategory(item.subid)">Delete Category</button>               
+               <td>{{item.gst}}</td>
+               <td><button type="button"  class="btn btn-danger" (click)="deletecategory(item.subid)">Delete SubCategory</button>               
             </td>
               
             </tr>

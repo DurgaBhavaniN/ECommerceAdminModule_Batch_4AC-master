@@ -1,7 +1,7 @@
 ﻿using AdminCategoryService.Entities;
 using AdminCategoryService.Models;
 using AdminCategoryService.Repository;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel;
+using Microsoft.EntityFrameworkCore;
 using Moq;
 using NUnit.Framework;
 using System;
@@ -13,10 +13,13 @@ namespace TestAdminServices
     class TestAdminRepository
     {
         AdminRepositoty _repo;
+        DbContextOptionsBuilder<EmartDBContext> _builder;
         [SetUp]
         public void setup()
         {
-            _repo = new AdminRepositoty(new EmartDBContext());
+            _builder = new DbContextOptionsBuilder<EmartDBContext>().EnableSensitiveDataLogging().UseInMemoryDatabase(Guid.NewGuid().ToString());
+            EmartDBContext db = new EmartDBContext(_builder.Options);
+            _repo = new AdminRepositoty(db);
 
         }
         [TearDown]
@@ -32,7 +35,7 @@ namespace TestAdminServices
         {
             try
             {
-                var cId = 557;
+                var cId = 558;
                 var cName = "book";
                 var CDetail = "all books";
                 var cat = new CategoryModel { Cid = cId, Cname = cName, Cdetails = CDetail };
@@ -54,7 +57,7 @@ namespace TestAdminServices
         {
             try
             {
-                var subId = 121;
+                var subId = 123;
                 var sName = "hdfa";
                 var sDetail = "jbcahv";
                 var cId = 557;
@@ -130,7 +133,7 @@ namespace TestAdminServices
         [Description("Testing get by id for  Subcategory")]
         [TestCase(999)]
         [TestCase(1000)]
-        public void Getbysubcategory_Failure(int subid)
+        public void GetbySubCategory_Failure(int subid)
         {
             try
             {
@@ -282,7 +285,7 @@ namespace TestAdminServices
         {
             try
             {
-                SubCategoryModel sub = new SubCategoryModel() {   Subid=1,Subname = "pen", Cid = 1, Gst = 4, Sdetails = "def" };
+                SubCategoryModel sub = new SubCategoryModel() {   Subid=123,Subname = "pen", Cid = 558, Gst = 4, Sdetails = "def" };
                 var mock = new Mock<IAdminRepository>();
                 mock.Setup(x => x.updatesubcategory(sub)).ReturnsAsync(true);
                 var result = await _repo.updatesubcategory(sub);
@@ -302,7 +305,12 @@ namespace TestAdminServices
         {
             try
             {
-               CategoryModel cat = new CategoryModel() {   Cid= 1, Cname= "fashion",  Cdetails = "menfashion" };
+                var cid = 569;
+                var cname = "clothes";
+                var cdetails = "mensfashion";
+                CategoryModel cat1 = new CategoryModel() { Cid = cid, Cname = cname, Cdetails = cdetails };
+                await _repo.AddCategory(cat1);
+               CategoryModel cat = new CategoryModel() {   Cid= 569, Cname= "fashion",  Cdetails = "menfashion" };
                 var mock = new Mock<IAdminRepository>();
                 mock.Setup(x => x.updatecategory(cat)).ReturnsAsync(true);
                 var result = await _repo.updatecategory(cat);

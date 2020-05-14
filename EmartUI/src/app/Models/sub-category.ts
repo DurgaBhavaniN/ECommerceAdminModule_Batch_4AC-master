@@ -2,7 +2,7 @@ export class SubCategory {
 subid:Number;
 subname:string;
 cid:Number;
-sdetails:String;
+sdetails:string;
 gst:Number;
 
 }
